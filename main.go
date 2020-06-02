@@ -5,6 +5,9 @@ import (
 	"html/template"
 	"net/http"
 	"time"
+
+	"github.com/google/go-cmp/cmp"
+	"github.com/mervmacdo/luckystar-hotellodge/morestrings"
 )
 
 type Welcome struct {
@@ -33,6 +36,9 @@ func main() {
 	})
 
 	fmt.Println("Serving on port 8080")
+
+	fmt.Println(morestrings.ReverseRunes("!oG ,olleH"))
+	fmt.Println(cmp.Diff("Hello WOrld", "Hello Go"))
 
 	fmt.Println(http.ListenAndServe(":8080", nil))
 }
